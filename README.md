@@ -39,6 +39,8 @@ Em `.env.local`, use `VITE_DEMO=true`. A interface abre com dados de exemplo e n
 
 Repositório: `https://github.com/JulioAbreuCanalDev33/fitaluno-pwa`
 
+**App publicado:** https://fitaluno.vercel.app
+
 1. Acesse **https://vercel.com/new** e entre com GitHub.
 2. Clique em **Import** ao lado de `JulioAbreuCanalDev33/fitaluno-pwa`.
 3. A Vercel detecta o **Vite** automaticamente. Confira:
