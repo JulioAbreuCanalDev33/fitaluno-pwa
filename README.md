@@ -35,17 +35,23 @@ Abra `http://localhost:5173`.
 
 Em `.env.local`, use `VITE_DEMO=true`. A interface abre com dados de exemplo e não exige login nem banco.
 
-## 3. Publicar (necessário para instalar no iPhone)
+## 3. Publicar na Vercel via GitHub (necessário para instalar no iPhone)
 
-O PWA precisa de HTTPS. A forma mais simples é Vercel ou Netlify (plano free):
+Repositório: `https://github.com/JulioAbreuCanalDev33/fitaluno-pwa`
 
-```bash
-npm run build      # gera a pasta dist
-```
+1. Acesse **https://vercel.com/new** e entre com GitHub.
+2. Clique em **Import** ao lado de `JulioAbreuCanalDev33/fitaluno-pwa`.
+3. A Vercel detecta o **Vite** automaticamente. Confira:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+4. Em **Environment Variables**, adicione:
+   - `VITE_SUPABASE_URL` = URL do projeto Supabase (`https://xxx.supabase.co`)
+   - `VITE_SUPABASE_PUBLISHABLE_KEY` = chave publishable do projeto
+5. Clique em **Deploy**. O HTTPS é automático.
 
-- **Vercel**: importe o repositório, framework `Vite`, build `npm run build`, output `dist`.
-- Defina as variáveis de ambiente `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY` no painel da plataforma.
-- **Netlify**: mesmo build, diretório `dist`.
+> Não coloque a `service_role key` na Vercel — apenas a chave publishable, que é própria para o navegador.
+
+Se preferir outro provedor, Netlify e Cloudflare Pages usam o mesmo comando (`npm run build`) e diretório `dist`.
 
 ### Instalar no iPhone
 
